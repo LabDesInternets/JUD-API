@@ -1,0 +1,32 @@
+# dependencies
+/node_modules
+/.pnp
+.pnp.js
+
+# testing
+/coverage
+
+# misc
+.DS_Store
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+.nycrc.json
+.sequelizerc
+.nyc_output
+.eslintignore
+.eslintrc.json
+.nvmrc
+Dockerfile
+/src/database/seeds/202002241600-wines-catalog.js
+/src/assets
+
+
+

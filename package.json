@@ -1,0 +1,84 @@
+{
+  "name": "jud-api",
+  "version": "1.0.0",
+  "description": "",
+  "author": "lab",
+  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/L-AB/jud-api.git"
+  },
+  "bugs": {
+    "url": "https://github.com/L-AB/jud-api/issues"
+  },
+  "homepage": "https://github.com/L-AB/jud-api#readme",
+  "engines": {
+    "node": ">=12.16.0"
+  },
+  "main": "src/index.js",
+  "scripts": {
+    "preinstall": "npx npm-force-resolutions",
+    "start": "nodemon src/index.js",
+    "dev": "nodemon src/index.js",
+    "test": "npm run test:unit",
+    "test:unit": "nyc mocha ./src/**/*.spec.js",
+    "lint": "eslint .",
+    "lint:fix": "eslint --fix .",
+    "migrate": "sequelize db:migrate",
+    "migrate:undo": "sequelize db:migrate:undo:all",
+    "seeds": "sequelize db:seed:all",
+    "seeds:undo": "sequelize db:seed:undo:all"
+  },
+  "resolutions": {
+    "minimist": "1.2.3",
+    "mkdir": "0.5.3"
+  },
+  "husky": {
+    "hooks": {
+      "pre-push": "npm run lint --no-verify && npm run test --no-verify"
+    }
+  },
+  "devDependencies": {
+    "chai": "^4.2.0",
+    "chai-http": "^4.3.0",
+    "eslint": "^6.8.0",
+    "eslint-config-airbnb-base": "^14.0.0",
+    "eslint-config-prettier": "^6.10.0",
+    "eslint-plugin-import": "^2.20.1",
+    "eslint-plugin-node": "^11.0.0",
+    "eslint-plugin-prettier": "^3.1.2",
+    "eslint-plugin-promise": "^4.2.1",
+    "husky": "^4.2.3",
+    "mocha": "^7.0.1",
+    "nodemon": "^2.0.2",
+    "nyc": "^15.0.0",
+    "prettier": "^1.19.1",
+    "sinon": "^9.0.0",
+    "sinon-chai": "^3.5.0",
+    "supertest": "^4.0.2"
+  },
+  "dependencies": {
+    "bcrypt": "^4.0.1",
+    "body-parser": "^1.19.0",
+    "cors": "^2.8.5",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "express-async-errors": "^3.1.1",
+    "express-validator": "^6.6.1",
+    "firebase-admin": "^8.9.2",
+    "helmet": "^3.21.2",
+    "jsonwebtoken": "^8.5.1",
+    "lodash": "^4.17.20",
+    "moment": "^2.24.0",
+    "morgan": "^1.9.1",
+    "passport": "^0.4.1",
+    "passport-local": "^1.0.0",
+    "pg": "^7.18.2",
+    "pg-hstore": "^2.3.3",
+    "sequelize": "^5.21.5",
+    "sequelize-cli": "^5.5.1",
+    "slug": "^2.1.1",
+    "uuid": "^3.4.0",
+    "winston": "^3.3.3"
+  }
+}
